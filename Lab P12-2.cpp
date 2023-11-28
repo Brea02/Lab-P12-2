@@ -16,7 +16,7 @@ bool isNotPunctuation(char c);
 
 int main() {
 	string datafile;
-	cout << "P12-1 program!\n";
+	cout << "P12-2 program!\n";
 	cout << "Enter filename: ";
 	getline(cin, datafile);
 	bool status = readFromFile(datafile);
@@ -45,7 +45,10 @@ bool readFromFile(string filename) {
 
 		while (!inFile.eof()) {
 			inFile >> word;
-			countWord++;
+			if (word != "-") {
+				countWord++;
+			}
+			//countWord++;
 
 			//cout << setw(2) << countWord << ". " << left << setw(20) << word << right;
 
